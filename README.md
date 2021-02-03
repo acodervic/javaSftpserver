@@ -33,6 +33,6 @@ In theory, it supports windows, you need to download the windows version of graa
 ```
 
 # 中文
-这是一个java实现的跨平台的ssh/sftp服务器,使用graalvm原生编译为二进制镜像,只有6m.我一般用来管理docker文件和远程vps文件。已经在linux  ubutu18  x64上进行了编译和测试(支持文件/夹 删除/创建/修改/复制/移动 等).如果它对你有用,请给我一个星星>_<
+这是一个java实现的跨平台的ssh/sftp服务器,使用graalvm原生编译为二进制镜像,只有6m.我一般用来管理docker文件和远程vps文件。已经在linux  ubuntu18  x64上进行了编译和测试(支持文件/夹 删除/创建/修改/复制/移动 等).如果它对你有用,请给我一个星星>_<
 
 为了成功的进行原生编译,我处理了Apache SSHD的SLFJ的日志依赖。已经进行了提前的编译配置和优化,你可以在安装graalvm后执行build.sh进行编译,当我进行了upx压缩之后,输出文件体积降低到了6m.关于如何编译,见英文上文.
