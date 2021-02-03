@@ -22,9 +22,11 @@ iptables -A INPUT -p tcp --dport   36721 -j ACCEPT
 
 Then you can connect in the file manager under linux/windows
 
--  nautilus 
+-  linux
+ nautilus 
+![](linux.png)
 
-- windows file manager
+- windows: You need some software such as WinSCP
 
 ### native image
 
