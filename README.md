@@ -1,19 +1,10 @@
 # javaSftpserver
 Native cross-platform ssh/sftp server compiled with graalvm, only 6m in size.(If it works for you, please give me a star >_<)
 
-##  build
-git cone this project , and open with IDE .After waiting for maven to compile the classes that can be compiled.
 
-### jar
-Because there are some symbol errors that require other dependencies, they will increase the size of the binary executable file. So I chose not to fix them (does not affect basic functions)
+## use
+Use commands to execute files on the machine to be managed.
 
-```bash
-cd  javaSftpserver
- mvn assembly:attached -f "pom.xml"  #They will output all class files to the target folder
-``` 
-Will generate a jar in directory target
-
-# use
 args:   user passMd5  host port
 ```bash
 iptables -A INPUT -p tcp --dport   36721 -j ACCEPT
@@ -27,6 +18,19 @@ Then you can connect in the file manager under linux/windows
 ![](linux.png)
 
 - windows: You need some software such as WinSCP
+
+##  build
+git cone this project , and open with IDE .After waiting for maven to compile the classes that can be compiled.
+
+### jar
+Because there are some symbol errors that require other dependencies, they will increase the size of the binary executable file. So I chose not to fix them (does not affect basic functions)
+
+```bash
+cd  javaSftpserver
+ mvn assembly:attached -f "pom.xml"  #They will output all class files to the target folder
+``` 
+Will generate a jar in directory target
+
 
 ### native image
 
