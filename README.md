@@ -21,7 +21,7 @@ Then you can connect in the file manager under linux/windows
 
 ##  issue
 -  Unable to connect to sftp server
-You can execute ssh user@host -p port first to try to connect to the target ssh service，If your sftp server was restarted , a new key will be generated in the client's ~/.ssh directory.Try to delete the key information in the known_hosts file,Reconnect afterwards
+You can execute ssh user@host -p port first to try to connect to the target ssh service，If your sftp server was restarted before , a new key will be generated in the client's ~/.ssh directory.Try to delete the key information in the known_hosts file,Reconnect afterwards
 ```bash
 xxx@xxxx~> ssh test@122.114.xxx.xxx -p 36721                                                                                                                                                                    14:17:09
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
