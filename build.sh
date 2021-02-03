@@ -1,0 +1,2 @@
+ mvn assembly:attached -f "pom.xml"
+/usr/lib/jvm/graalvm-ee-java8-20.3.0/bin/native-image    --no-fallback   -H:+ReportExceptionStackTraces  --no-server   --initialize-at-build-time   --allow-incomplete-classpath     -H:DynamicProxyConfigurationFiles=proxyClass.json --enable-all-security-services   -H:ReflectionConfigurationFiles=reflectionConfig.json      --pgo    -jar target/javaSftp-1.0-SNAPSHOT.jar
