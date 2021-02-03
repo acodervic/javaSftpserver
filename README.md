@@ -11,7 +11,7 @@ Because there are some symbol errors that require other dependencies, they will 
 cd  javaSftpserver
  mvn assembly:attached -f "pom.xml"  #They will output all class files to the target folder
 ``` 
-you cant foud a jar.
+Will generate a jar in directory target
 
 ### native image
 
