@@ -7,8 +7,8 @@ Use commands to execute files on the machine to be managed.
 
 args:   user passMd5  host port
 ```bash
-iptables -A INPUT -p tcp --dport   36721 -j ACCEPT
-./javaSftp-1.0-SNAPSHOT_UPX  test e10adc3949ba59abbe56e057f20f883e 122.114.xxx.xxx  36721  #user=test pass=123456 
+iptables -A INPUT -p tcp --dport   36721 -j ACCEPT #If your machine is linux, you need to open the port for connection
+./javaSftp-1.0-SNAPSHOT_UPX  test e10adc3949ba59abbe56e057f20f883e 122.114.xxx.xxx  36721  #user=test pass=123456 (e10adc3949ba59abbe56e057f20f883e)
 ```
 
 Then you can connect in the file manager under linux/windows
