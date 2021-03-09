@@ -22,16 +22,26 @@ import org.apache.sshd.sftp.server.SftpSubsystemFactory;
 
 public class App {
     public static void main(String[] args) throws IOException {
-        if (args.length < 4) {
+        StringBuilder userString = new StringBuilder("test");
+        StringBuilder passMd5 = new StringBuilder("098F6BCD4621D373CADE4E832627B4F6");
+        String address = "0.0.0.0";
+        int port = 56231;
+        if (args.length == 0) {
+            // 默认用户test 密码test
+            System.out.println("listening: 0.0.0.0:" + port + "  username=test password=test");
+        } else if (args.length < 4) {
             System.out.println("must need 3 options! like: user userMd5   listenaddress listenport");
             System.out.println("test  49ba59abbe56e057  0.0.0.0  7888  ");
             return;
+        } else {
+            userString.delete(0, userString.length() - 1);
+            userString.append(args[0]);
+            passMd5.delete(0, passMd5.length() - 1);
+            passMd5.append(args[1]);
+            address = args[2];
+            port = Integer.parseInt(args[3]);
         }
-        // parse args
-        String userString = args[0];
-        String passMd5 = args[1];
-        String address = args[2];
-        Integer port = Integer.parseInt(args[3]);
+
         System.out.println("listeneHoss=" + address + "    port=" + port);
         //支持sftp
         SubsystemFactory factory = new SftpSubsystemFactory.Builder()
@@ -61,7 +71,7 @@ public class App {
             @Override
             public boolean authenticate(String username, String password, ServerSession session) {
                 System.out.println("authen:  user=" + username + "  password=" + password);
-                if (userString.equals(userString) && MD5(password).equals(passMd5)) {
+                if (userString.toString().equals(username) && MD5(password).toUpperCase().equals(passMd5.toString())) {
                     return true;
                 }
                 return false;
